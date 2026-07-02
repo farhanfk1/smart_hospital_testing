@@ -1,0 +1,43 @@
+module.exports = {
+  "Super Admin": [
+    "OPD Income",
+    "IPD Income",
+    "Pharmacy Income",
+    "Pathology Income",
+    "Radiology Income",
+    "Blood Bank Income",
+    "Ambulance Income",
+    "General Income",
+    "Expense",
+  ],
+  "Admin": [
+    "OPD Income",
+    "IPD Income",
+    "Pharmacy Income",
+    "Pathology Income",
+    "Radiology Income",
+    "Blood Bank Income",
+    "Ambulance Income",
+    "General Income",
+    "Expense",
+  ],
+  "Doctor": ["IPD Income"],
+  "Pharmacist": ["Pharmacy Income"],
+  "Pathologist": ["Pathology Income"],
+  "Radiologist": ["Radiology Income"],
+  "Accountant": [
+    "OPD Income",
+    "IPD Income",
+    "Pharmacy Income",
+    "Pathology Income",
+    "Radiology Income",
+    "Blood Bank Income",
+    "Ambulance Income",
+    "General Income",
+    "Expense",
+  ],
+  "Receptionist": ["OPD Income", "IPD Income"],
+  "Nurse": [],
+
+
+};
