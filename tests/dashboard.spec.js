@@ -3,7 +3,7 @@ const { test, expect } = require("@playwright/test");
 const DashboardPage = require("../pages/dashboard");
 const LoginPage = require("../pages/LoginPage");
 
-const cards = require("../test-data/dashboardData");
+const dashboardData = require("../test-data/dashboardData");
 const loginData = require("../test-data/loginData");
 // login
 loginData.forEach((user) => {
@@ -17,19 +17,33 @@ loginData.forEach((user) => {
     await login.login();
 
     const dashboard = new DashboardPage(page);
+    const roleData = dashboardData[user.role];
 
-    if (cards[user.role].length === 0) {
+    if (roleData.cards.length === 0) {
       await dashboard.verifyNoCards();
       return;
     }
     else {
-      for (const card of cards[user.role]) {
+      for (const card of roleData.cards) {
         await dashboard.verifyVisible(card);
 
         await dashboard.verifyClickable(card);
       }
     }
-     
+
+    // verify graphs
+    for (const graph of roleData.graphs) {
+      await dashboard.verifyGraph(graph.title, graph.locator);
+    }
+    // verify staff cards
+    if (roleData.staffCards && roleData.staffCards.length > 0) {
+      for (const staffCard of roleData.staffCards) {
+        await dashboard.verifyStaffCardVisible(staffCard);
+        await dashboard.verifyStaffCardClickable(staffCard);
+      }
+    }
+
+
     // verify notification 
    const notificationExists = await dashboard.hasNotification();
 
@@ -45,7 +59,8 @@ loginData.forEach((user) => {
      await dashboard.verifyNotificationPage();
    } else {
       console.log("No notification found for this user.");
-   }
+    }
+    
 
   });
 });

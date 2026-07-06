@@ -3,16 +3,15 @@ const { expect } = require("@playwright/test");
 class DashboardPage {
   constructor(page) {
     this.page = page;
-    this.notification = page.locator('.dashalert a');
+    this.notification = page.locator(".dashalert a");
   }
   async hasNotification() {
-    return await this.notification.count() > 0;
+    return (await this.notification.count()) > 0;
   }
-  
+
   // verify if notification is visible
   async verifyNotificationVisible() {
     await expect(this.notification.first()).toBeVisible();
-  
   }
   // verify notification is clickable
   async verifyNotificationClickable() {
@@ -26,7 +25,6 @@ class DashboardPage {
   async verifyNotificationPage() {
     await expect(this.page).toHaveURL(/admin\/notification/);
   }
-
 
   // Get card by name
   getCard(cardName) {
@@ -51,6 +49,30 @@ class DashboardPage {
   async verifyNoCards() {
     await expect(this.page.locator(".info-box-content")).toHaveCount(0);
   }
+
+  async verifyGraph(title, locator) {
+    await expect(this.page.getByText(title, { exact: true })).toBeVisible();
+
+    await expect(this.page.locator(locator)).toBeVisible();
+  }
+
+  // get staff card
+  getStaffCard(staffName) {
+    return this.page.locator(".info-box").filter({
+      has: this.page.getByText(staffName, { exact: true }),
+    });
+  }
+  async verifyStaffCardVisible(staffName) {
+    await expect(this.getStaffCard(staffName)).toBeVisible();
+  }
+  async verifyStaffCardClickable(staffName) {
+    await expect(this.getStaffCard(staffName)).toBeEnabled();
+  }
+// new commentt for github push is correct fronm farhanfk1
+  async clickStaffCard(staffName) {
+    await expect(this.getStaffCard(staffName)).click();
+  }
+  
 }
 
 module.exports = DashboardPage;

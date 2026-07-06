@@ -19,13 +19,42 @@ module.exports = {
     { menu: "Messaging" },
     { menu: "Inventory" },
     { menu: "Front CMS" },
+    {
+      menu: "Birth & Death Record",
+      submenu: [{ menu: "Birth Record" }, { menu: "Death Record" }],
+    },
+  ],
+  Admin: [
+    { menu: "Patient" },
+    { menu: "Billing" },
+    { menu: "Appointment" },
+    { menu: "OPD - Out Patient" },
+    { menu: "IPD - In Patient" },
+    { menu: "Pharmacy" },
+    { menu: "Pathology" },
+    { menu: "Radiology" },
+    { menu: "Blood Bank" },
+    { menu: "Ambulance" },
+    { menu: "Front Office" },
+    { menu: "Human Resource" },
+    { menu: "Duty Roster" },
+    { menu: "Annual Calendar" },
+    { menu: "Referral" },
+    { menu: "TPA Management" },
+    { menu: "Messaging" },
+    { menu: "Inventory" },
+    { menu: "Front CMS" },
+    {
+      menu: "Birth & Death Record",
+      submenu: [{ menu: "Birth Record" }, { menu: "Death Record" }],
+    },
   ],
   Doctor: [
     { menu: "Patient" },
     { menu: "Appointment" },
     { menu: "OPD - Out Patient" },
     { menu: "IPD - In Patient" },
-    
+
     { menu: "Messaging" },
   ],
 
@@ -61,7 +90,7 @@ module.exports = {
 
   Nurse: [
     { menu: "Patient" },
-    
+
     { menu: "OPD - Out Patient" },
     { menu: "IPD - In Patient" },
     { menu: "Messaging" },

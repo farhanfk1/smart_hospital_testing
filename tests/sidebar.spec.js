@@ -22,6 +22,15 @@ loginData.forEach((user) => {
     for (const item of menus) {
       await sidebar.verifyMenu(item.menu);
       await sidebar.clickMenu(item.menu);
+
+      if (item.submenu) {
+        for (const sub of item.submenu) {
+          await sidebar.verifyMenu(sub.menu);
+          await sidebar.clickMenu(sub.menu);
+        }
+      }
+
+      
     }
   });
 });
