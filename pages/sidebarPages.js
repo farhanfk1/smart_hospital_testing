@@ -20,7 +20,19 @@ class SidebarPage {
 
     await expect(menu).toBeVisible();
     await expect(menu).toBeEnabled();
+    
+  } // Click menu
+  async clickMenu(menuName) {
+    const menu = this.getMenu(menuName);
+
+    await expect(menu).toBeVisible();
+    await expect(menu).toBeEnabled();
+
+    const href = await menu.getAttribute("href");
+
+    await menu.click();
+
+  
   }
 }
-
 module.exports = SidebarPage;

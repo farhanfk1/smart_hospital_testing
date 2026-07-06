@@ -1,24 +1,27 @@
-const { test } = require("@playwright/test");
+const { test, expect } = require("@playwright/test");
 
 const LoginPage = require("../pages/LoginPage");
 const SidebarPage = require("../pages/sidebarPages");
 
-const loginDaat = require("../test-data/loginData");
+const loginData = require("../test-data/loginData");
 const sidebarData = require("../test-data/sidebarData");
 
+loginData.forEach((user) => {
+  test(`Verify Sidebar Menus - ${user.role}`, async ({ page }) => {
+    const login = new LoginPage(page);
+    const sidebar = new SidebarPage(page);
 
+    await login.open();
+    await login.selectRole(user.role);    
+    await login.login();
 
-test("Verify Sidebar Menus", async ({ page }) => {
-  const login = new LoginPage(page);
-  const sidebar = new SidebarPage(page);
+    await expect(page).toHaveURL(/admin\/admin\/dashboard/);
 
-  await login.open();
-  await login.selectRole("Super Admin");
-  await login.login();
+    const menus = sidebarData[user.role] || [];
 
-  const menus = sidebarData["Super Admin"];
-
-  for (const item of menus) {
-    await sidebar.verifyMenu(item.menu);
-  }
+    for (const item of menus) {
+      await sidebar.verifyMenu(item.menu);
+      await sidebar.clickMenu(item.menu);
+    }
+  });
 });

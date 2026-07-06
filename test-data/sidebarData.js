@@ -25,7 +25,7 @@ module.exports = {
     { menu: "Appointment" },
     { menu: "OPD - Out Patient" },
     { menu: "IPD - In Patient" },
-    { menu: "Duty Roster" },
+    
     { menu: "Messaging" },
   ],
 
@@ -53,7 +53,6 @@ module.exports = {
   Receptionist: [
     { menu: "Patient" },
     { menu: "Billing" },
-    { menu: "Appointment" },
     { menu: "OPD - Out Patient" },
     { menu: "IPD - In Patient" },
     { menu: "Front Office" },
@@ -62,7 +61,7 @@ module.exports = {
 
   Nurse: [
     { menu: "Patient" },
-    { menu: "Appointment" },
+    
     { menu: "OPD - Out Patient" },
     { menu: "IPD - In Patient" },
     { menu: "Messaging" },
