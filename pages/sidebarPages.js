@@ -17,6 +17,7 @@ class SidebarPage {
 
   async verifyMenu(menuName) {
     const menu = this.getMenu(menuName);
+   await menu.scrollIntoViewIfNeeded();
 
     await expect(menu).toBeVisible();
     await expect(menu).toBeEnabled();
@@ -29,7 +30,7 @@ class SidebarPage {
     await expect(menu).toBeEnabled();
 
     const href = await menu.getAttribute("href");
-
+   await menu.scrollIntoViewIfNeeded();
     await menu.click();
 
   
