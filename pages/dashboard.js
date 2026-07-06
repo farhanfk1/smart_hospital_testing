@@ -28,11 +28,13 @@ class DashboardPage {
 
   // Get card by name
   getCard(cardName) {
-    return this.page.locator(".info-box-content", {
-      has: this.page.locator(".info-box-text", {
-        hasText: cardName,
-      }),
-    });
+    return this.page
+      .locator(".info-box", {
+        has: this.page.locator(".info-box-text", {
+          hasText: cardName,
+        }),
+      })
+      .locator("a");
   }
 
   async verifyVisible(cardName) {
@@ -46,10 +48,24 @@ class DashboardPage {
   async clickCard(cardName) {
     await this.getCard(cardName).click();
   }
+  async verifyCardPage(url) {
+    await expect(this.page).toHaveURL(new RegExp(url));
+  }
+  async backToDashboard() {
+    await this.page.goto(
+      "https://demo.smart-hospital.in/admin/admin/dashboard",
+      {
+        waitUntil: "load",
+      },
+    );
+
+    await expect(this.page.locator(".info-box").first()).toBeVisible();
+  }
+
   async verifyNoCards() {
     await expect(this.page.locator(".info-box-content")).toHaveCount(0);
   }
-
+  // graph
   async verifyGraph(title, locator) {
     await expect(this.page.getByText(title, { exact: true })).toBeVisible();
 
@@ -57,22 +73,22 @@ class DashboardPage {
   }
 
   // get staff card
-  getStaffCard(staffName) {
-    return this.page.locator(".info-box").filter({
-      has: this.page.getByText(staffName, { exact: true }),
-    });
+  getStaffCard(url) {
+    return this.page.locator(`a[href*="${url}"]`);
   }
-  async verifyStaffCardVisible(staffName) {
-    await expect(this.getStaffCard(staffName)).toBeVisible();
+  async verifyStaffCardVisible(url) {
+    await expect(this.getStaffCard(url)).toBeVisible();
   }
-  async verifyStaffCardClickable(staffName) {
-    await expect(this.getStaffCard(staffName)).toBeEnabled();
+  async verifyStaffCardClickable(url) {
+    await expect(this.getStaffCard(url)).toBeEnabled();
   }
-// new commentt for github push is correct fronm farhanfk1
-  async clickStaffCard(staffName) {
-    await expect(this.getStaffCard(staffName)).click();
+  // new commentt for github push is correct fronm farhanfk1
+  async clickStaffCard(url) {
+    await this.getStaffCard(url).click();
   }
-  
+  async verifyStaffCardPage(url) {
+    await expect(this.page).toHaveURL(new RegExp(url));
+  }
 }
 
 module.exports = DashboardPage;

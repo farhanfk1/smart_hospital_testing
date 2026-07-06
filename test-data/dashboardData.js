@@ -1,15 +1,42 @@
 module.exports = {
   "Super Admin": {
     cards: [
-      "OPD Income",
-      "IPD Income",
-      "Pharmacy Income",
-      "Pathology Income",
-      "Radiology Income",
-      "Blood Bank Income",
-      "Ambulance Income",
-      "General Income",
-      "Expense",
+      {
+        name: "OPD Income",
+        url: "/admin/patient/search",
+      },
+      {
+        name: "IPD Income",
+        url: "/admin/patient/ipdsearch",
+      },
+      {
+        name: "Pharmacy Income",
+        url: "/admin/pharmacy/bill",
+      },
+      {
+        name: "Pathology Income",
+        url: "/admin/pathology/gettestreportbatch",
+      },
+      {
+        name: "Radiology Income",
+        url: "/admin/radio/gettestreportbatch",
+      },
+      {
+        name: "Blood Bank Income",
+        url: "/admin/bloodbank/issue",
+      },
+      {
+        name: "Ambulance Income",
+        url: "/admin/vehicle/getcallambulance",
+      },
+      {
+        name: "General Income",
+        url: "/admin/income",
+      },
+      {
+        name: "Expense",
+        url: "/admin/expense",
+      },
     ],
     graphs: [
       {
@@ -26,28 +53,82 @@ module.exports = {
       },
     ],
     staffCards: [
-      "Admin",
-      "Accountant",
-      "Doctor",
-      "Pharmacist",
-      "Pathologist",
-      "Radiologist",
-      "Super Admin",
-      "Receptionist",
-      "Nurse",
+      {
+        name: "Admin",
+        url: "/admin/staff/index/1",
+      },
+      {
+        name: "Accountant",
+        url: "/admin/staff/index/2",
+      },
+      {
+        name: "Doctor",
+        url: "/admin/staff/index/3",
+      },
+      {
+        name: "Pharmacist",
+        url: "/admin/staff/index/4",
+      },
+      {
+        name: "Pathologist",
+        url: "/admin/staff/index/5",
+      },
+      {
+        name: "Radiologist",
+        url: "/admin/staff/index/6",
+      },
+      {
+        name: "Super Admin",
+        url: "/admin/staff/index/7",
+      },
+      {
+        name: "Receptionist",
+        url: "/admin/staff/index/8",
+      },
+      {
+        name: "Nurse",
+        url: "/admin/staff/index/9",
+      },
     ],
   },
   Admin: {
     cards: [
-      "OPD Income",
-      "IPD Income",
-      "Pharmacy Income",
-      "Pathology Income",
-      "Radiology Income",
-      "Blood Bank Income",
-      "Ambulance Income",
-      "General Income",
-      "Expense",
+      {
+        name: "OPD Income",
+        url: "/admin/patient/search",
+      },
+      {
+        name: "IPD Income",
+        url: "/admin/patient/ipdsearch",
+      },
+      {
+        name: "Pharmacy Income",
+        url: "/admin/pharmacy/bill",
+      },
+      {
+        name: "Pathology Income",
+        url: "/admin/pathology/gettestreportbatch",
+      },
+      {
+        name: "Radiology Income",
+        url: "/admin/radio/gettestreportbatch",
+      },
+      {
+        name: "Blood Bank Income",
+        url: "/admin/bloodbank/issue",
+      },
+      {
+        name: "Ambulance Income",
+        url: "/admin/vehicle/getcallambulance",
+      },
+      {
+        name: "General Income",
+        url: "/admin/income",
+      },
+      {
+        name: "Expense",
+        url: "/admin/expense",
+      },
     ],
     graphs: [
       {
@@ -64,19 +145,51 @@ module.exports = {
       },
     ],
     staffCards: [
-      "Admin",
-      "Accountant",
-      "Doctor",
-      "Pharmacist",
-      "Pathologist",
-      "Radiologist",
-      "Super Admin",
-      "Receptionist",
-      "Nurse",
+      {
+        name: "Admin",
+        url: "/admin/staff/index/1",
+      },
+      {
+        name: "Accountant",
+        url: "/admin/staff/index/2",
+      },
+      {
+        name: "Doctor",
+        url: "/admin/staff/index/3",
+      },
+      {
+        name: "Pharmacist",
+        url: "/admin/staff/index/4",
+      },
+      {
+        name: "Pathologist",
+        url: "/admin/staff/index/5",
+      },
+      {
+        name: "Radiologist",
+        url: "/admin/staff/index/6",
+      },
+      {
+        name: "Super Admin",
+        url: "/admin/staff/index/7",
+      },
+      {
+        name: "Receptionist",
+        url: "/admin/staff/index/8",
+      },
+      {
+        name: "Nurse",
+        url: "/admin/staff/index/9",
+      },
     ],
   },
   Doctor: {
-    cards: ["IPD Income"],
+    cards: [
+      {
+        name: "IPD Income",
+        url: "/admin/patient/ipdsearch",
+      },
+    ],
     graphs: [
       {
         title: "Calendar",
@@ -84,19 +197,51 @@ module.exports = {
       },
     ],
     staffCards: [
-      "Admin",
-      "Accountant",
-      "Doctor",
-      "Pharmacist",
-      "Pathologist",
-      "Radiologist",
-      "Super Admin",
-      "Receptionist",
-      "Nurse",
+      {
+        name: "Admin",
+        url: "/admin/staff/index/1",
+      },
+      {
+        name: "Accountant",
+        url: "/admin/staff/index/2",
+      },
+      {
+        name: "Doctor",
+        url: "/admin/staff/index/3",
+      },
+      {
+        name: "Pharmacist",
+        url: "/admin/staff/index/4",
+      },
+      {
+        name: "Pathologist",
+        url: "/admin/staff/index/5",
+      },
+      {
+        name: "Radiologist",
+        url: "/admin/staff/index/6",
+      },
+      {
+        name: "Super Admin",
+        url: "/admin/staff/index/7",
+      },
+      {
+        name: "Receptionist",
+        url: "/admin/staff/index/8",
+      },
+      {
+        name: "Nurse",
+        url: "/admin/staff/index/9",
+      },
     ],
   },
   Pharmacist: {
-    cards: ["Pharmacy Income"],
+    cards: [
+      {
+        name: "Pharmacy Income",
+        url: "/admin/pharmacy/bill",
+      },
+    ],
     graphs: [
       {
         title: "Calendar",
@@ -104,29 +249,66 @@ module.exports = {
       },
     ],
     staffCards: [
-      "Admin",
-      "Accountant",
-      "Doctor",
-      "Pharmacist",
-      "Pathologist",
-      "Radiologist",
-      "Super Admin",
-      "Receptionist",
-      "Nurse",
+      {
+        name: "Admin",
+        url: "/admin/staff/index/1",
+      },
+      {
+        name: "Accountant",
+        url: "/admin/staff/index/2",
+      },
+      {
+        name: "Doctor",
+        url: "/admin/staff/index/3",
+      },
+      {
+        name: "Pharmacist",
+        url: "/admin/staff/index/4",
+      },
+      {
+        name: "Pathologist",
+        url: "/admin/staff/index/5",
+      },
+      {
+        name: "Radiologist",
+        url: "/admin/staff/index/6",
+      },
+      {
+        name: "Super Admin",
+        url: "/admin/staff/index/7",
+      },
+      {
+        name: "Receptionist",
+        url: "/admin/staff/index/8",
+      },
+      {
+        name: "Nurse",
+        url: "/admin/staff/index/9",
+      },
     ],
   },
   Pathologist: {
-    cards: ["Pathology Income"],
+    cards: [
+      {
+        name: "Pathology Income",
+        url: "/admin/pathology/gettestreportbatch",
+      },
+    ],
     graphs: [
       {
         title: "Calendar",
         locator: "#calendar",
       },
     ],
-    staffCards: []
+    staffCards: [],
   },
   Radiologist: {
-    cards: ["Radiology Income"],
+    cards: [
+      {
+        name: "Radiology Income",
+        url: "/admin/radio/gettestreportbatch",
+      },
+    ],
     graphs: [
       {
         title: "Calendar",
@@ -134,28 +316,82 @@ module.exports = {
       },
     ],
     staffCards: [
-      "Admin",
-      "Accountant",
-      "Doctor",
-      "Pharmacist",
-      "Pathologist",
-      "Radiologist",
-      "Super Admin",
-      "Receptionist",
-      "Nurse",
+      {
+        name: "Admin",
+        url: "/admin/staff/index/1",
+      },
+      {
+        name: "Accountant",
+        url: "/admin/staff/index/2",
+      },
+      {
+        name: "Doctor",
+        url: "/admin/staff/index/3",
+      },
+      {
+        name: "Pharmacist",
+        url: "/admin/staff/index/4",
+      },
+      {
+        name: "Pathologist",
+        url: "/admin/staff/index/5",
+      },
+      {
+        name: "Radiologist",
+        url: "/admin/staff/index/6",
+      },
+      {
+        name: "Super Admin",
+        url: "/admin/staff/index/7",
+      },
+      {
+        name: "Receptionist",
+        url: "/admin/staff/index/8",
+      },
+      {
+        name: "Nurse",
+        url: "/admin/staff/index/9",
+      },
     ],
   },
   Accountant: {
     cards: [
-      "OPD Income",
-      "IPD Income",
-      "Pharmacy Income",
-      "Pathology Income",
-      "Radiology Income",
-      "Blood Bank Income",
-      "Ambulance Income",
-      "General Income",
-      "Expense",
+      {
+        name: "OPD Income",
+        url: "/admin/patient/search",
+      },
+      {
+        name: "IPD Income",
+        url: "/admin/patient/ipdsearch",
+      },
+      {
+        name: "Pharmacy Income",
+        url: "/admin/pharmacy/bill",
+      },
+      // {
+      //   name: "Pathology Income",
+      //   url: "/admin/pathology/gettestreportbatch",
+      // },
+      {
+        name: "Radiology Income",
+        url: "/admin/radio/gettestreportbatch",
+      },
+      {
+        name: "Blood Bank Income",
+        url: "/admin/bloodbank/issue",
+      },
+      {
+        name: "Ambulance Income",
+        url: "/admin/vehicle/getcallambulance",
+      },
+      {
+        name: "General Income",
+        url: "/admin/income",
+      },
+      {
+        name: "Expense",
+        url: "/admin/expense",
+      },
     ],
     graphs: [
       {
@@ -172,19 +408,55 @@ module.exports = {
       },
     ],
     staffCards: [
-      "Admin",
-      "Accountant",
-      "Doctor",
-      "Pharmacist",
-      "Pathologist",
-      "Radiologist",
-      "Super Admin",
-      "Receptionist",
-      "Nurse",
+      {
+        name: "Admin",
+        url: "/admin/staff/index/1",
+      },
+      {
+        name: "Accountant",
+        url: "/admin/staff/index/2",
+      },
+      {
+        name: "Doctor",
+        url: "/admin/staff/index/3",
+      },
+      {
+        name: "Pharmacist",
+        url: "/admin/staff/index/4",
+      },
+      {
+        name: "Pathologist",
+        url: "/admin/staff/index/5",
+      },
+      {
+        name: "Radiologist",
+        url: "/admin/staff/index/6",
+      },
+      {
+        name: "Super Admin",
+        url: "/admin/staff/index/7",
+      },
+      {
+        name: "Receptionist",
+        url: "/admin/staff/index/8",
+      },
+      {
+        name: "Nurse",
+        url: "/admin/staff/index/9",
+      },
     ],
   },
   Receptionist: {
-    cards: ["OPD Income", "IPD Income"],
+    cards: [
+      {
+        name: "OPD Income",
+        url: "/admin/patient/search",
+      },
+      {
+        name: "IPD Income",
+        url: "/admin/patient/ipdsearch",
+      },
+    ],
     graphs: [
       {
         title: "Calendar",
@@ -192,15 +464,42 @@ module.exports = {
       },
     ],
     staffCards: [
-      "Admin",
-      "Accountant",
-      "Doctor",
-      "Pharmacist",
-      "Pathologist",
-      "Radiologist",
-      "Super Admin",
-      "Receptionist",
-      "Nurse",
+      {
+        name: "Admin",
+        url: "/admin/staff/index/1",
+      },
+      {
+        name: "Accountant",
+        url: "/admin/staff/index/2",
+      },
+      {
+        name: "Doctor",
+        url: "/admin/staff/index/3",
+      },
+      {
+        name: "Pharmacist",
+        url: "/admin/staff/index/4",
+      },
+      {
+        name: "Pathologist",
+        url: "/admin/staff/index/5",
+      },
+      {
+        name: "Radiologist",
+        url: "/admin/staff/index/6",
+      },
+      {
+        name: "Super Admin",
+        url: "/admin/staff/index/7",
+      },
+      {
+        name: "Receptionist",
+        url: "/admin/staff/index/8",
+      },
+      {
+        name: "Nurse",
+        url: "/admin/staff/index/9",
+      },
     ],
   },
   Nurse: {
@@ -212,15 +511,42 @@ module.exports = {
       },
     ],
     staffCards: [
-      "Admin",
-      "Accountant",
-      "Doctor",
-      "Pharmacist",
-      "Pathologist",
-      "Radiologist",
-      "Super Admin",
-      "Receptionist",
-      "Nurse",
+      {
+        name: "Admin",
+        url: "/admin/staff/index/1",
+      },
+      {
+        name: "Accountant",
+        url: "/admin/staff/index/2",
+      },
+      {
+        name: "Doctor",
+        url: "/admin/staff/index/3",
+      },
+      {
+        name: "Pharmacist",
+        url: "/admin/staff/index/4",
+      },
+      {
+        name: "Pathologist",
+        url: "/admin/staff/index/5",
+      },
+      {
+        name: "Radiologist",
+        url: "/admin/staff/index/6",
+      },
+      {
+        name: "Super Admin",
+        url: "/admin/staff/index/7",
+      },
+      {
+        name: "Receptionist",
+        url: "/admin/staff/index/8",
+      },
+      {
+        name: "Nurse",
+        url: "/admin/staff/index/9",
+      },
     ],
   },
 };
