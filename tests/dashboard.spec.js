@@ -1,7 +1,7 @@
 const { test } = require("@playwright/test");
 
 const DashboardPage = require("../pages/dashboard");
-const LoginPage = require("../pages/loginPage");
+const LoginPage = require("../pages/loginpage");
 
 const dashboardData = require("../test-data/dashboardData");
 const loginData = require("../test-data/loginData");
