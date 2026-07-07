@@ -4,7 +4,7 @@ module.exports = defineConfig({
   testDir: "./tests",
   reporter: "html",
   use: {
-    headless: false,
+    headless: true,
     slowMo: 1000,
     screenshot: "only-on-failure",
     video: "retain-on-failure-and-retries",
