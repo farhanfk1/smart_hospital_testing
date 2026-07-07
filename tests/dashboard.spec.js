@@ -3,7 +3,7 @@ const { test } = require("@playwright/test");
 const DashboardPage = require("../pages/dashboard");
 const LoginPage = require("../pages/loginpage");
 
-const dashboardData = require("../test-data/dashboardData");
+const dashboardData = require("../test-data/dashboard/dashboardData");
 const loginData = require("../test-data/loginData");
 
 loginData.forEach((user) => {
