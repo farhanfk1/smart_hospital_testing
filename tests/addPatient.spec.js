@@ -4,7 +4,7 @@ const LoginPage = require("../pages/loginpage");
 const PatientPage = require("../pages/patientPage");
 
 const loginData = require("../test-data/loginData");
-const patientData = require("../test-data/patientData");
+const createPatientData = require("../test-data/patientData");
 
 const allowUsers = loginData.filter(user => 
    ["Super Admin", "Admin", "Doctor","Receptionist"].includes(user.role)
@@ -14,6 +14,8 @@ allowUsers.forEach((user) => {
   test(`Add New Patient as ${user.role}`, async ({ page }) => {
     const login = new LoginPage(page);
     const patient = new PatientPage(page);
+
+    const patientData = createPatientData(); // Generate unique data
 
     await login.open();
     await login.selectRole(user.role);
