@@ -11,7 +11,7 @@ const allowUsers = loginData.filter((user) =>
 );
 
 allowUsers.forEach((user) => {
-  test.only(`Add IPD Patient as ${user.role}`, async ({ page }) => {
+  test(`Add IPD Patient as ${user.role}`, async ({ page }) => {
     const login = new LoginPage(page);
     const ipd = new IPDPage(page);
 
