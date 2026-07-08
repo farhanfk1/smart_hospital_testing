@@ -1,5 +1,8 @@
+const staffId = `STF${Date.now()}`;
+
+const email = `john${Date.now()}@test.com`;
 module.exports = {
-  staffId: "STF1001",
+  staffId,
   roleIndex: 1,
   designationIndex: 1,
   departmentIndex: 1,
@@ -12,5 +15,5 @@ module.exports = {
 
   genderIndex: 1,
   date: "08/07/2026",
-  email: "john.smith@test.com",
+  email,
 };

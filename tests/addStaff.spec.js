@@ -1,6 +1,6 @@
 const { test } = require("@playwright/test");
 
-const LoginPage = require("../pages/loginPage");
+const LoginPage = require("../pages/loginpage");
 const AddStaffPage = require("../pages/addStaffPage");
 
 const loginData = require("../test-data/loginData");

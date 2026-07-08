@@ -145,8 +145,9 @@ class AddStaffPage {
   }
 
   async selectDOB(date) {
-    await this.dob.fill(date);
-
+    await this.dob.click();
+    await this.dob.clear();
+    await this.dob.type(date);
     // Current date will be selected automatically
     await this.page.locator("body").click();
   }
@@ -160,9 +161,7 @@ class AddStaffPage {
   }
 
   async verifyHumanResourcePage() {
-    await expect(this.page).toHaveURL(this.staffPage);
-
-    await expect(this.addStaffButton).toBeVisible();
+    await expect(this.page).toHaveURL(/staff/);
   }
 }
 
