@@ -8,7 +8,7 @@ const appointmentData = require("../test-data/appoinmentData");
 
 // Users who can add appointments
 const allowedUsers = loginData.filter((user) =>
-  ["Super Admin", "Admin", "Doctor", "Accountant", "Receptionist"].includes(
+  ["Super Admin", "Admin", "Doctor", "Receptionist"].includes(
     user.role,
   ),
 );
