@@ -38,13 +38,21 @@ class IPDPage {
   async openAddPatient() {
     await this.ipdMenu.click();
 
-    await expect(this.addPatientButton).toBeVisible();
+ await expect(this.addPatientButton).toBeVisible({timeout: 15000});
 
     await this.addPatientButton.click();
+  
+    
   }
 
   async selectPatient(name) {
-    await this.patientDropdown.click();
+
+    const modal = this.page.locator("#myModal");
+     const patientDropdown = modal.locator(
+       "[aria-labelledby='select2-addpatient_id-container']",
+    );
+    await expect(patientDropdown).toBeVisible({ timeout: 30000 });
+    await patientDropdown.click();
 
     const searchBox = this.page.locator(
       ".select2-container--open input.select2-search__field",
