@@ -69,15 +69,10 @@ class PatientPage {
     });
 
     await this.addPatientButton.click();
-    await this.page.waitForTimeout(1000);
+    // await this.page.waitForTimeout(1000);
 
-    
-  console.log(
-    "Visible modals:",
-    await this.page.locator(".modal:visible").count(),
-  );
-
-  await this.patientModal.waitFor({
+    // Wait until the Add Patient form is visible
+  await this.page.locator("#formaddpa").waitFor({
     state: "visible",
   });
   }
