@@ -48,7 +48,8 @@ class AppointmentPage {
     });
 
     await this.addAppointmentButton.click();
-
+     // Wait until the Add Patient form is completely open
+  
    
   }
 
@@ -71,7 +72,7 @@ await firstPatient.click();
     });
 
     // Wait for shifts to load
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(10000);
 
     // Shift
     await this.shift.selectOption({
@@ -79,7 +80,7 @@ await firstPatient.click();
     });
 
     // Wait for slots to load
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(10000);
 
     // Appointment Date
     await this.appointmentDate.click();
@@ -88,7 +89,7 @@ await firstPatient.click();
     await this.appointmentDate.press("Tab");
 
     // Wait for slot list to refresh
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(10000);
 
     // Slot
     await this.slot.click();
